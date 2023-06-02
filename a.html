@@ -4,39 +4,70 @@
     <title>生日祝福網頁</title>
     <style>
         body {
-            background-color: #f1f1f1;
+            background-color: #000000;
             text-align: center;
             font-family: Arial, sans-serif;
         }
 
         h1 {
-            color: #333333;
+            color: #ffffff;
+            animation: blink 1s infinite alternate; /* 添加動畫效果 */
         }
 
         img {
             border-radius: 50%;
             margin-top: 20px;
+            width: 300px;
+            height: auto;
+        }
+
+        .marquee {
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: marquee 10s linear infinite; /* 調整跑馬燈動畫時間為10秒 */
+        }
+
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee-slide 30s linear infinite; /* 調整文字滑動動畫時間為30秒 */
+	    color: #ffffff;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes marquee-slide {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        @keyframes blink {
+            0% {
+                opacity: 0.2;
+            }
+            100% {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
     <h1>生日快樂！</h1>
     <img src="birthday_image.jpg" alt="生日快樂圖片">
-    <p>親愛的朋友，祝你生日快樂！希望你的生日充滿歡樂和祝福。</p>
+    <div class="marquee">
+        <span>生日快樂 二姊!!! </span> <!-- 在跑馬燈中顯示文字 -->
+    </div>
 
-    <script>
-        // 設定生日日期
-        var birthday = new Date('2023-06-02');
-        // 取得今天的日期
-        var today = new Date();
-
-        // 計算距離生日還有幾天
-        var daysLeft = Math.ceil((birthday - today) / (1000 * 60 * 60 * 24));
-
-        // 在網頁上顯示距離生日還有幾天
-        var message = document.createElement('p');
-        message.textContent = '距離你的生日還有 ' + daysLeft + ' 天！';
-        document.body.appendChild(message);
-    </script>
 </body>
 </html>
