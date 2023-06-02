@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>生日祝福網頁</title>
+    <style>
+        body {
+            background-color: #f1f1f1;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        img {
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>生日快樂！</h1>
+    <img src="birthday_image.jpg" alt="生日快樂圖片">
+    <p>親愛的朋友，祝你生日快樂！希望你的生日充滿歡樂和祝福。</p>
+
+    <script>
+        // 設定生日日期
+        var birthday = new Date('2023-06-02');
+        // 取得今天的日期
+        var today = new Date();
+
+        // 計算距離生日還有幾天
+        var daysLeft = Math.ceil((birthday - today) / (1000 * 60 * 60 * 24));
+
+        // 在網頁上顯示距離生日還有幾天
+        var message = document.createElement('p');
+        message.textContent = '距離你的生日還有 ' + daysLeft + ' 天！';
+        document.body.appendChild(message);
+    </script>
+</body>
+</html>
